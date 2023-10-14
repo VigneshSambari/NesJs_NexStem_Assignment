@@ -50,7 +50,7 @@ The application is deployed on AWS EC2 with below link, open the API documentati
 
 ## Implementation Details
 
-I have implemented this project using NestJS, a powerful Node.js framework. To keep the implementation simple, I did not use any database for simple implementation. Additionally, I've incorporated used inbuilt Websocket of NestJs and Socket.IO for real-time communication.
+I have implemented this project using NestJS, a powerful Node.js framework. To keep the implementation simple, I did not use any database for simple implementation. Additionally, I've incorporated used inbuilt Websocket of NestJs and Socket.IO for real-time communication. Used linux and windows native commands to fetch system information.
 
 
 ## Used npm Packages

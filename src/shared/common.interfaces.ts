@@ -15,5 +15,22 @@ export interface ResponseStructure {
 
 export interface SocketStructure {
   type: string;
-  usage: string;
+  usage: any;
+}
+
+export interface CpuUsage {
+  user: string;
+  system: string;
+  idle: string;
+  wait: string;
+  stolen: string;
+}
+
+export interface MemoryUsage {
+  total: string;
+  used: string;
+  free: string;
+  shared: string;
+  buffCache: string;
+  available: string;
 }
