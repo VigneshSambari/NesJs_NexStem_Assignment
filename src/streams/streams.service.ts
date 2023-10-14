@@ -31,7 +31,8 @@ export class StreamsService {
     return response;
   }
 
-  // Start stream and initiate interval for 
+  // Start stream and initiate interval for of 100 milliseconds
+  //to fetch and send system information
   startStream(streamId: string): ResponseStructure {
     const stream = this.streams.get(streamId);
     if (stream) {
@@ -41,7 +42,7 @@ export class StreamsService {
           const data = await this.collectStreamData(stream.type);
           this.WebSocket.sendStreamData(streamId, data);
         }, 100); // 100 milliseconds (10 times per second)
-        this.intervals.set(streamId, interval);
+        this.intervals.set(streamId, interval); // save interval information into map
         stream.live = true;
       } else {
         throw new ForbiddenException('Stream already running!');
@@ -59,14 +60,13 @@ export class StreamsService {
     return response;
   }
 
+  // stop the stream with received streamId
   stopStream(streamId: string): ResponseStructure {
     const stream = this.streams.get(streamId);
     if (this.intervals.has(streamId)) {
-      clearInterval(this.intervals.get(streamId));
+      clearInterval(this.intervals.get(streamId)); // clear interval from map
       this.intervals.delete(streamId);
       stream.live = false;
-    } else {
-      throw new ForbiddenException('Stream is already stopped!');
     }
 
     const response: ResponseStructure = {
@@ -77,8 +77,11 @@ export class StreamsService {
     return response;
   }
 
+  // Destroy stream, stop it if it is not stopped yet
   destroyStream(streamId: string): ResponseStructure {
     const stream = this.streams.get(streamId);
+
+    this.stopStream(streamId); // ensure stream is stopped
 
     if (stream) {
       stream.live = false;

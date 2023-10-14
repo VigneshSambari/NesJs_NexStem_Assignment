@@ -32,18 +32,20 @@ I have generated API documentation using Swagger Docs. You can explore the API a
 
 - [http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/api](http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/api)
 
+
 ## Testing WebSocket
 
-The application uses websockets, both the inbuilt websocket and Socket.IO. To test WebSocket functionality, you can use Postman to connect to the following WebSocket endpoint:
+The application uses websockets, both the inbuilt websocket and Socket.IO. To test WebSocket functionality, you can use Postman to connect to the following Socket.io endpoint:
+Note: Select Socket.io option in Postman instead of WebSocket to test.
 
 - [http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/](http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/)
+
 
 ## Deployment
 
 The application is deployed on AWS EC2 with below link, open the API documentation from above link don't open the below link:
 
 - [http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/](http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/)
-
 
 
 ## Implementation Details
@@ -95,6 +97,6 @@ $ npm run test:cov
 
 ## Stay in touch
 
-- [@Sambari Vignesh](https://github.com/VigneshSambari)
+- [@Sambari Vignesh](https://thick-fly-21.deno.dev/)
 
 
