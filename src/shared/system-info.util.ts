@@ -2,25 +2,27 @@
 import { exec } from 'child_process';
 
 export class SystemInfoUtil {
+  // Fetch CPU information depending on platform -- windows or linux
   static async getCPUUsage(): Promise<string> {
     const isWindows = process.platform === 'win32';
 
     const cpuUsageCommand = isWindows
       ? 'wmic cpu get loadpercentage'
-      : 'top -b -n 1 | grep "%Cpu(s):" | awk \'{print $2}\'';
+      : 'vmstat 1 1';
 
     try {
       const cpuUsage = await this.executeCommand(cpuUsageCommand);
 
       return isWindows
         ? `${cpuUsage.split('\r\r\n')[1]}%`
-        : `${parseFloat(cpuUsage).toFixed(2)}%`;
+        : cpuUsage;
     } catch (error) {
       console.error('Error fetching CPU usage:', error);
       return 'N/A';
     }
   }
 
+  // Fetch memory information depending on platform -- windows or linux
   static async getMemoryUsage(): Promise<string> {
     const isWindows = process.platform === 'win32';
 
@@ -38,9 +40,9 @@ export class SystemInfoUtil {
         const usedMemory = totalMemory - freeMemory;
         return `${usedMemory.toFixed(2)}MB / ${totalMemory.toFixed(2)}MB`;
       } else {
-        const usedMemory = memoryData.split('\n')[1].split(/\s+/)[2];
-        const totalMemory = memoryData.split('\n')[1].split(/\s+/)[1];
-        return `${usedMemory}MB / ${totalMemory}MB`;
+        // const usedMemory = memoryData.split('\n')[1].split(/\s+/)[2];
+        // const totalMemory = memoryData.split('\n')[1].split(/\s+/)[1];
+        return memoryData;
       }
     } catch (error) {
       console.error('Error fetching memory usage:', error);

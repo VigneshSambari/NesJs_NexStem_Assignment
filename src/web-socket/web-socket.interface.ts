@@ -15,16 +15,19 @@ export class WebSocketStream
   @WebSocketServer()
   server: Server;
 
+  // Handle User connection to WebSocket
   handleConnection(client: Socket) {
     console.log(`${client.id} connected!`);
   }
 
+  // Handle User disconnect from WebSocket
   handleDisconnect(client: Socket) {
     console.log(`${client.id} disconnected!`);
   }
 
   //Send messages from server on streamId socket
   sendStreamData(streamId: string, data: any) {
+    // Sends messages to user using StreamId which is unique
     this.server.emit(streamId, data);
   }
 }

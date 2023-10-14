@@ -11,6 +11,7 @@ export class StreamsService {
 
   constructor(private WebSocket: WebSocketStream) {}
 
+  // Create stream with StreamTypoe and send response
   createStream(type: StreamTypes): ResponseStructure {
     const streamId = this.generateStreamId();
     const stream: StreamData = {
@@ -30,6 +31,7 @@ export class StreamsService {
     return response;
   }
 
+  // Start stream and initiate interval for 
   startStream(streamId: string): ResponseStructure {
     const stream = this.streams.get(streamId);
     if (stream) {
@@ -38,7 +40,7 @@ export class StreamsService {
         const interval = setInterval(async () => {
           const data = await this.collectStreamData(stream.type);
           this.WebSocket.sendStreamData(streamId, data);
-        }, 1000); // 100 milliseconds (10 times per second)
+        }, 100); // 100 milliseconds (10 times per second)
         this.intervals.set(streamId, interval);
         stream.live = true;
       } else {
