@@ -7,8 +7,7 @@ export class SystemInfoUtil {
   // Fetch CPU information depending on platform -- windows or linux
   static async getCPUUsage(): Promise<any> {
     const isWindows = process.platform === 'win32';
-    const input: string = "procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----\nr  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st\n1  0      0 102097504 1635940 25885208    0    4     1    14    0    1 12  3 85  0  0";
-    console.log(this.parseCpuUsageLinux(input))
+  
     const cpuUsageCommand = isWindows
       ? 'wmic cpu get loadpercentage'
       : 'vmstat 1 1';
@@ -28,12 +27,7 @@ export class SystemInfoUtil {
   // Fetch memory information depending on platform -- windows or linux
   static async getMemoryUsage(): Promise<any> {
     const isWindows = process.platform === 'win32';
-    const input: string = `
-    total        used        free      shared  buff/cache   available
-    Mem:          128717        2134       99703           3       26878      125386
-    Swap:           4095           0        4095
-    `;
-    console.log(this.parseMemoryUsageLinux(input))
+    
     const memoryUsageCommand = isWindows
       ? 'wmic OS get FreePhysicalMemory,TotalVisibleMemorySize /value'
       : 'free -m';
@@ -80,11 +74,6 @@ export class SystemInfoUtil {
 
     const header = lines[1].split(/\s+/).filter(Boolean);
     const data = lines[2].split(/\s+/).filter(Boolean);
-    // console.log(header)
-    // console.log(data)
-    // if (header.length !== data.length) {
-    //   return null; // Invalid format
-    // }
 
     const cpuUsage: any = {};
 
