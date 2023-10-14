@@ -26,17 +26,18 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Deployment
-
-You can access the application deployed on an AWS EC2 instance at the following URL:
-
-- [http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/](http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/)
-
 ## API Documentation
 
 I have generated API documentation using Swagger. You can explore the API and test it directly from the following link:
 
 - [http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/api](http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/api)
+
+## Deployment
+
+The application is deployed on AWS EC2 with below link, open the API documentation from above link don't open the below link:
+
+- [http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/](http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/)
+
 
 ## Testing WebSocket
 
