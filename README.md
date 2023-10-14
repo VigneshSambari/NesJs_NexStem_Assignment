@@ -28,7 +28,7 @@
 
 ## API Documentation
 
-I have generated API documentation using Swagger. You can explore the API and test it directly from the following link:
+I have generated API documentation using Swagger Docs. You can explore the API and test it directly from the following link:
 
 - [http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/api](http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/api)
 
