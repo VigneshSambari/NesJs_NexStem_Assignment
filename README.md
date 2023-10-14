@@ -28,37 +28,41 @@
 
 ## Deployment
 
-You can access our application deployed on an AWS EC2 instance at the following URL:
+You can access the application deployed on an AWS EC2 instance at the following URL:
 
 - [http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/](http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/)
 
 ## API Documentation
 
-We've generated API documentation using Swagger. You can explore the API and test it directly from the following link:
+I have generated API documentation using Swagger. You can explore the API and test it directly from the following link:
 
 - [http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/api](http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/api)
 
 ## Testing WebSocket
 
-Our application uses websockets, both the inbuilt websocket and Socket.IO. To test WebSocket functionality, you can use Postman to connect to the following WebSocket endpoint:
+The application uses websockets, both the inbuilt websocket and Socket.IO. To test WebSocket functionality, you can use Postman to connect to the following WebSocket endpoint:
 
 - [http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/](http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/)
 
 ## Implementation Details
 
-We've implemented this project using NestJS, a powerful Node.js framework. To keep the implementation simple, we have not used any database. Additionally, we've incorporated both the inbuilt websocket and Socket.IO for real-time communication.
+I have implemented this project using NestJS, a powerful Node.js framework. To keep the implementation simple, I did not use any database for simple implementation. Additionally, I've incorporated used inbuilt Websocket of NestJs and Socket.IO for real-time communication.
+
+
+## Used npm Packages
+
+I've used the following npm packages to build this project:
+
+- [@nestjs/platform-socket.io](https://www.npmjs.com/package/@nestjs/platform-socket.io): Version 10.2.7
+- [@nestjs/swagger](https://www.npmjs.com/package/@nestjs/swagger): Version 7.1.13
+- [@nestjs/websockets](https://www.npmjs.com/package/@nestjs/websockets): Version 10.2.7
+
 
 ## Installation
 
 ```bash
 $ npm install
 
-
-## Installation
-
-```bash
-$ npm install
-```
 
 ## Running the app
 
@@ -86,16 +90,9 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- [@Sambari Vignesh](https://github.com/VigneshSambari)
 
-## License
 
-Nest is [MIT licensed](LICENSE).
