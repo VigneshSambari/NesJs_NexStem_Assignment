@@ -36,7 +36,7 @@ I have generated API documentation using Swagger Docs. You can explore the API a
 ## Testing WebSocket
 
 The application uses websockets, both the inbuilt websocket and Socket.IO. To test WebSocket functionality, you can use Postman to connect to the following Socket.io endpoint:
-Note: Select Socket.io option in Postman instead of WebSocket to test.
+Note: Select Socket.io option in Postman instead of WebSocket to test. Use the StreamId of the stream received from the APIs after starting the stream, listen to the Websocket on the streamId.
 
 - [http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/](http://ec2-16-170-225-253.eu-north-1.compute.amazonaws.com:3000/)
 

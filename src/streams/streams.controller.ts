@@ -29,8 +29,6 @@ export class StreamsController {
     else if (type === 'memory') streamType = StreamTypes.MEMORY;
     else streamType = StreamTypes.DEFAULT;
 
-    // console.log(await SystemInfoUtil.getCPUUsage())
-    // console.log(await SystemInfoUtil.getMemoryUsage())
     return this.streamsService.createStream(streamType);
   }
 
