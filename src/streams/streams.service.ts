@@ -1,7 +1,7 @@
 import { ForbiddenException, HttpStatus, Injectable } from '@nestjs/common';
 import { StreamTypes } from '../shared/common.enum';
 import { SocketStructure, StreamData, SystemInfoUtil } from 'src/shared';
-import { WebSocketStream } from './../web-socket/web-socket.interface';
+import { WebSocketStream } from '../web-socket/web-socket.gateway';
 import { ResponseStructure } from 'src/shared';
 
 @Injectable()

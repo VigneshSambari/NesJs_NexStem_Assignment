@@ -1,5 +1,5 @@
 import { Global, Module } from '@nestjs/common';
-import { WebSocketStream } from './web-socket.interface';
+import { WebSocketStream } from './web-socket.gateway';
 
 @Global()
 @Module({
