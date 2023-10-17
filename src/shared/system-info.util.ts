@@ -1,7 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { exec } from 'child_process';
 import { MemoryUsage } from './common.interfaces';
-import { CpuUsageData, CpuUsageInterpreter } from './common.enum';
+import { CpuUsageData, CpuUsageInterpreter } from './commom.class';
+
 
 export class SystemInfoUtil {
   // Fetch CPU information depending on platform -- windows or linux
